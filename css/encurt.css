@@ -1,0 +1,34 @@
+:root{
+    --spacing-0: 0px;
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 20px;
+    --spacing-10: 40px;
+}
+
+.u-flex{
+    display: flex !important;
+}
+.u-justfy-center{
+    justify-content: center !important;
+}
+.u-items-center{
+    align-items: center !important;
+}
+
+.u-mt-10{
+    margin-top: var(--spacing-10) !important;
+}
+.u-mt-4{
+    margin-top: var(--spacing-5) !important;
+}
+
+.u-mb-10{
+    margin-bottom: var(--spacing-10) !important;
+}
+
+.btn-amarelo{
+    background-color: #ffd600 !important;
+}
