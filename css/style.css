@@ -1,25 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 body {
     height: 100vh;
     width: 100vw;
-    background-color: gray;
+
 }
 
-.display_mobile{
-    width: 550px;
-    height: 700px;
-    background: #fff;
-}
 .back{
     background: url('../img/PERFIL.png') center center no-repeat fixed;
     background-size: cover;
 }
 
 .content{
-    width: 100%;
     height: 100%;
     padding: 20px;
 }
@@ -45,53 +41,73 @@ body {
     color: white;
     text-shadow:  2px 2px 2px rgba(0, 0, 0, 0.8);
 }
-.button-start h1{
-    color: #fff;
+
+.category-area{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.category-area h3{
+    color: #a6a6a6;
+    margin-left: 15px;
+    font-weight: 800;
+}
+.enigma-area{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.enigma-area h3{
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffd600;
+    text-shadow:  0px 0px 10px rgba(0, 0, 0, 0.8);
 }
 
-/*  */
-
-.header-add{
-    width: 100%;
-    height: 70px;
-    background: #1a24b2;
+.dicas-area{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.dica-item{
+    height: 60px;
+    width: 60px;
+    background: #000b9e;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.header-add h1{
-    color: #ffd600;
-    font-weight: 700;
-}
-
-.player-area{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.player-item{
-    max-width: 250px;
     margin: 0 auto 50px auto;
-}
-.player-item--img{
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
-    background: #ffd600;
-}
-.player-item--name{
-    font-weight: 500;
-    text-align: center;
-}
-.player-item input{
-    background: none;
+    color: white;
     border: none;
-    font-weight: 600;
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: 900;
 }
-.player-item--add{
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
-    background: #f2f2f2;
+.dica-item:hover{
+    cursor: pointer;
+}
+.tip-area{
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.tip-area h3{
+    color: white;
+}
+
+.buttons-group{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+.button-check, .button-error{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.button-check{
+    background: green;
+}
+.button-error{
+    background: red;   
 }

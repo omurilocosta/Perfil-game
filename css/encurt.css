@@ -17,6 +17,12 @@
 .u-items-center{
     align-items: center !important;
 }
+.u-flex-col{
+    flex-direction: column !important;
+}
+.u-text-center{
+    text-align: center !important;
+}
 
 .u-mt-10{
     margin-top: var(--spacing-10) !important;
@@ -27,8 +33,4 @@
 
 .u-mb-10{
     margin-bottom: var(--spacing-10) !important;
-}
-
-.btn-amarelo{
-    background-color: #ffd600 !important;
 }
