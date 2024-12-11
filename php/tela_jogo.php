@@ -32,10 +32,6 @@
         $dados_dica = mysqli_query($conn, $sql_dica);
     }
 
-    
-
-    
-
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -43,36 +39,49 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
-
         <title>Perfil</title>
     </head>
     <body>
-        <div class="content">
-            <div class="category-area">
-                <h3><?php echo "$nome_tema"; ?>:</h3>
-            </div>
-            <div class="enigma-area">
-                <h3><?php echo "$nome_enigma"; ?></h3>
-            </div>
-            <div class="dicas-area">
-                <?php 
-                    $num = 1;
-                    while ($linha = mysqli_fetch_assoc($dados_dica)){
-                        $desc_dica = $linha['desc_dica'];
-                        $id_dica = $linha['id_dica'];
+        <div class="mobile">
+            <div class="content-mobile">
+                <div class="category-area">
+                    <h1>CATEGORIA: </h1>
+                    <?php echo "<h1>$nome_tema</h1>" ?>
+                </div>
+                <div class="enigma-area">
+                    <h1><?php echo "$nome_enigma" ?></h1>
+                </div>
+                <div class="dica-area">
+                    <?php 
+                        $num = 1;
+                        while ($linha = mysqli_fetch_assoc($dados_dica)){
+                            $desc_dica = $linha['desc_dica'];
+                            $id_dica = $linha['id_dica'];
+                            $ptsPlayer = $_GET['pts'] ?? 20;
 
-                        echo "
-                            <form action='dicaPage.php' method='POST'>
-                                <input class='dica-item' type='submit' value='$num'>
-                                <input type='hidden' name='id_enigma' value='$id_enigma'>
-                                <input type='hidden' name='desc_dica' value='$desc_dica'>
-                            </form>";
-                        $num++;
-                    }
-                ?> 
-                
+                            echo "
+                                <form action='dicaPage.php' method='POST'>
+                                    <input class='dica-item' type='submit' value='$num'>
+                                    <input type='hidden' name='id_enigma' value='$id_enigma'>
+                                    <input type='hidden' name='desc_dica' value='$desc_dica'>
+                                    <input type='hidden' name='id_dica' value='$id_dica'>
+                                    <input type='hidden' name='ptsPlayer' value='$ptsPlayer'>
+                                </form>";
+                            $num++;
+                        }
+                    ?> 
+                </div>
+                <div class="button-finish">
+                    <form action="score.php" method="POST">
+                        <?php 
+                            $ptsPlayer = $_GET['pts'] ?? '';
+                            echo "
+                                <input type='hidden' name='ptsPlayer' value='$ptsPlayer'>
+                                <input type='submit' value='FINALIZAR'>"
+                        ?>
+                    </form>
+                </div>
             </div>
         </div>
-        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     </body>
 </html>
